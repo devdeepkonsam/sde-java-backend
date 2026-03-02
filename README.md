@@ -42,28 +42,28 @@ This repository documents my journey from Java fundamentals to becoming a produc
 
 ```
 SDE-Prep-2026/
-├── 01-Foundation-March/           # Phase 1: Java & OOPs
-│   ├── week-01-encapsulation/     # User class + JVM Memory Notes
-│   ├── week-02-inheritance/       # Vehicle System + Linux CLI basics
-│   ├── week-03-abstraction/       # Payment Interface (UPI/CreditCard)
-│   └── week-04-modern-java/       # Lambdas, Streams, & SQL Scripts
+├── foundation_march/              # Phase 1: Java & OOPs
+│   ├── week01_encapsulation/      # User class + JVM Memory Notes
+│   ├── week02_inheritance/        # Vehicle System + Linux CLI basics
+│   ├── week03_abstraction/        # Payment Interface (UPI/CreditCard)
+│   └── week04_modern_java/        # Lambdas, Streams, & SQL Scripts
 │
-├── 02-Core-Engineer-April/        # Phase 2: Spring Boot & Intermediate DSA
-│   ├── week-05-ioc-di/            # IoC & DI Notes + Gradle Wrapper setup
-│   ├── week-06-rest-apis/         # "Hello User" API implementation
-│   ├── week-07-persistence/       # JPA Entities & MySQL Config
-│   └── week-08-relationships/     # User-Post @OneToMany mapping
+├── core_engineer_april/           # Phase 2: Spring Boot & Intermediate DSA
+│   ├── week05_ioc_di/             # IoC & DI Notes + Gradle Wrapper setup
+│   ├── week06_rest_apis/          # "Hello User" API implementation
+│   ├── week07_persistence/        # JPA Entities & MySQL Config
+│   └── week08_relationships/      # User-Post @OneToMany mapping
 │
-├── 03-Expert-Ready-May/           # Phase 3: Advanced Topics & Production
-│   ├── week-09-security-jwt/      # JWT Authentication logic
-│   ├── week-10-dto-pattern/       # Data Transfer Objects (UserDTO)
-│   ├── week-11-testing/           # JUnit 5 & Mockito test cases
-│   └── week-12-packaging/         # JAR files & GitHub Portfolio polish
+├── expert_ready_may/              # Phase 3: Advanced Topics & Production
+│   ├── week09_security_jwt/       # JWT Authentication logic
+│   ├── week10_dto_pattern/        # Data Transfer Objects (UserDTO)
+│   ├── week11_testing/            # JUnit 5 & Mockito test cases
+│   └── week12_packaging/          # JAR files & GitHub Portfolio polish
 │
-├── 04-DSA-Solutions/              # NeetCode 150 Organized by Week
-│   ├── month-1-arrays-pointers/   # Arrays, Hashing, 2-Pointers, Sliding Window
-│   ├── month-2-stack-linkedlists/ # Stacks, Binary Search, Trees Pt. 1
-│   └── month-3-advanced-dsa/      # Trees Pt. 2, Heaps, Graphs, Dynamic Programming
+├── dsa_solutions/                 # NeetCode 150 Organized by Week
+│   ├── month_1_arrays_pointers/   # Arrays, Hashing, 2-Pointers, Sliding Window
+│   ├── month_2_stack_linkedlists/ # Stacks, Binary Search, Trees Pt. 1
+│   └── month_3_advanced_dsa/      # Trees Pt. 2, Heaps, Graphs, Dynamic Programming
 │
 ├── backend-project/               # 🌟 The Living Spring Boot Gradle Project
 │   ├── gradlew                    # Gradle Wrapper script

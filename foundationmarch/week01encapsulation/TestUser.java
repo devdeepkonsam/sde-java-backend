@@ -1,4 +1,5 @@
 public class TestUser {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         // Valid user
         User user1 = new User("John Doe", "john@example.com", "password123");

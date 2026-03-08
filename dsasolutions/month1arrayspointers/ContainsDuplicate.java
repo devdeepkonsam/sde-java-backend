@@ -49,6 +49,15 @@ public class ContainsDuplicate {
             }
             duplicate.add(number);
         }
+
+
+        //optimal 
+        HashSet<Integer> dup = new HashSet<>();
+        for (int num : nums) {
+            if (!dup.add(num)) {
+                return true;
+            }
+        }
         return false;
     }
 }

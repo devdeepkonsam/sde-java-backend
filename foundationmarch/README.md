@@ -21,6 +21,7 @@ Learn interface design and sliding window pattern for optimization.
 
 ### Week 4: Modern Java & SQL Basics
 Apply functional programming (Streams, Lambdas) and learn SQL fundamentals.
+Exception handling ,multithreading and concurrency , JDBC.
 
 ---
 

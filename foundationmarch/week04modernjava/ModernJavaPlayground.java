@@ -1,9 +1,8 @@
 package foundationmarch.week04modernjava;
-
+import java.io.PrintStream;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
-import java.io.PrintStream;
 
 /**
  * Modern Java 8+ Features Playground
@@ -38,7 +37,6 @@ public class ModernJavaPlayground {
             this.score = score;
             this.grade = grade;
         }
-
         public String toString() {
             return String.format("%s (Score: %d, Grade: %s)", name, score, grade);
         }

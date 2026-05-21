@@ -66,8 +66,19 @@ for (int i=1;i<n;i++) diff[i]+=diff[i-1];
 System.out.println(Arrays.toString(Arrays.copyOf(diff,n)));
 ```
 
-## 6. Hashing & frequency maps
-Count occurrences, solve two-sum for unsorted arrays, subarray-sum-k with prefix map.
+## 6. Hashing & frequency maps (expanded)
+Hashing is central to many array tasks: counting, existence checks, pair/subarray problems.
+
+- Frequency array (fast when values are small/non-negative). O(n + R) time, O(R) space where R is value range.
+
+```java
+int[] a = {1,2,2,3,1};
+int maxVal = 3; int[] freq = new int[maxVal+1];
+for (int v : a) freq[v]++;
+for (int v=0; v<freq.length; v++) if (freq[v]>0) System.out.println(v+":"+freq[v]);
+```
+
+- HashMap for unsorted pair-sum (two-sum) or indexing. Average O(n) time.
 
 ```java
 int[] a = {2,7,11,15}; int target = 9;
@@ -78,6 +89,36 @@ for (int i=0;i<a.length;i++){
 	idx.put(a[i], i);
 }
 ```
+
+- Prefix-sum + HashMap: count number of subarrays with sum == K (classic CF/LeetCode problem).
+
+```java
+int[] a = {1,1,1}; int K = 2;
+Map<Integer,Integer> count = new HashMap<>();
+count.put(0,1);
+int pref = 0, ans = 0;
+for (int v : a) {
+	pref += v;
+	ans += count.getOrDefault(pref - K, 0);
+	count.put(pref, count.getOrDefault(pref,0) + 1);
+}
+System.out.println(ans); // number of subarrays summing to K
+```
+
+- Use HashSet for quick membership (e.g., detect duplicates or find complement existence).
+
+```java
+int[] a = {3,1,4,1,5};
+Set<Integer> seen = new HashSet<>();
+boolean dup=false;
+for (int v: a) { if (!seen.add(v)) { dup=true; break; } }
+System.out.println("hasDuplicate="+dup);
+```
+
+Notes:
+- HashMaps/HashSets provide average O(1) lookups; watch out for worst-case attacks but fine for CF problems.  
+- When values are small and dense, prefer frequency arrays for speed and simplicity.  
+- Combine prefix sums + maps for many subarray counting problems (equal sum, sum modulo m, etc.).
 
 ## 7. Sorting & binary search
 Sort then use binary search or greedy selection; also binary-search-on-answer.

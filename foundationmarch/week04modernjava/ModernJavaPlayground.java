@@ -1,14 +1,32 @@
 package foundationmarch.week04modernjava;
 import java.io.PrintStream;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.Method;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 /**
  * Modern Java 8+ Features Playground
- * Topics: Lambdas, Streams, Optional, Functional Interfaces, Exception Handling
+ * Topics: Lambdas, Streams, Optional, Functional Interfaces, Exception Handling, Annotations, Reflection
  */
 public class ModernJavaPlayground {
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.TYPE)
+    @interface DemoInfo {
+        String value();
+    }
+
+    @DemoInfo("Week 4 reflection demo")
+    static class SampleService {
+        public void run() {
+            System.out.println("SampleService is running");
+        }
+    }
 
     // === 1. FUNCTIONAL INTERFACES & LAMBDAS ===
     @FunctionalInterface
@@ -65,11 +83,11 @@ public class ModernJavaPlayground {
         System.out.println("\n5. EXCEPTION HANDLING");
         exceptionHandlingExamples();
 
-        System.out.println("\n6. METHOD REFERENCES");
-        methodReferencesExamples();
+        System.out.println("\n6. ANNOTATIONS & REFLECTION");
+        annotationReflectionExamples();
 
-        System.out.println("\n7. MULTITHREADING BASICS");
-        multithreadingExamples();
+        System.out.println("\n7. METHOD REFERENCES");
+        methodReferencesExamples();
     }
 
     // ===== 1. LAMBDA EXPRESSIONS =====
@@ -249,6 +267,24 @@ public class ModernJavaPlayground {
         } // Auto-closed
     }
 
+    // ===== 6. ANNOTATIONS & REFLECTION =====
+    static void annotationReflectionExamples() {
+        Class<SampleService> serviceClass = SampleService.class;
+
+        if (serviceClass.isAnnotationPresent(DemoInfo.class)) {
+            DemoInfo info = serviceClass.getAnnotation(DemoInfo.class);
+            System.out.println("Annotation value: " + info.value());
+        }
+
+        System.out.println("Declared methods on SampleService:");
+        for (Method method : serviceClass.getDeclaredMethods()) {
+            System.out.println("  - " + method.getName());
+        }
+
+        SampleService service = new SampleService();
+        service.run();
+    }
+
     static int divideNumbers(int a, int b) throws ArithmeticException {
         if (b == 0) {
             throw new ArithmeticException("Cannot divide by zero");
@@ -286,44 +322,5 @@ public class ModernJavaPlayground {
         System.out.println("Using Constructor reference:");
         List<Integer> numbers = Arrays.asList(1, 2, 3);
         // Can be used with Function: Function<Integer, String> f = String::valueOf;
-    }
-
-    // ===== 7. MULTITHREADING BASICS =====
-    static void multithreadingExamples() {
-        // Thread 1: Using Runnable (Recommended)
-        System.out.println("Starting threads...");
-        Thread thread1 = new Thread(() -> {
-            for (int i = 0; i < 3; i++) {
-                System.out.println("Thread 1 - Count: " + i);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        Thread thread2 = new Thread(() -> {
-            for (int i = 0; i < 3; i++) {
-                System.out.println("  Thread 2 - Count: " + i);
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        thread1.start();
-        thread2.start();
-
-        // Wait for threads to complete
-        try {
-            thread1.join();
-            thread2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("All threads completed");
     }
 }

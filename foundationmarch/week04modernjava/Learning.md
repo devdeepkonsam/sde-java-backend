@@ -6,9 +6,10 @@
 3. **Optional<T>**
 4. **Method References**
 5. **Exception Handling**
-6. **JDBC & Database Connectivity**
-7. **SQL Fundamentals**
-8. **Multithreading Basics** (deferred)
+6. **Annotations & Reflection**
+7. **JDBC & Database Connectivity**
+8. **SQL Fundamentals**
+9. **Multithreading Basics** (deferred)
 
 ---
 
@@ -197,7 +198,39 @@ class InvalidAgeException extends Exception {
 
 ---
 
-## 7. JDBC & SQL
+## 7. ANNOTATIONS & REFLECTION
+
+### Custom Annotation
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@interface DemoInfo {
+    String value();
+}
+
+@DemoInfo("Week 4 reflection demo")
+class SampleService {
+}
+```
+
+### Reading Annotation at Runtime
+```java
+Class<SampleService> type = SampleService.class;
+if (type.isAnnotationPresent(DemoInfo.class)) {
+    DemoInfo info = type.getAnnotation(DemoInfo.class);
+    System.out.println(info.value());
+}
+```
+
+### Reflection Basics
+```java
+Method[] methods = SampleService.class.getDeclaredMethods();
+System.out.println(Arrays.toString(methods));
+```
+
+---
+
+## 8. JDBC & SQL
 
 ### Basic JDBC Steps
 ```java
@@ -240,6 +273,8 @@ while (rs.next()) {
 ✅ Optional eliminates null checks  
 ✅ Method references shorten lambda code  
 ✅ Exception handling makes code robust  
+✅ Annotations store metadata for later use  
+✅ Reflection reads class metadata at runtime  
 ✅ JDBC connects Java to databases  
 ✅ SQL queries retrieve and manipulate data  
 ✅ Multithreading can be learned later without breaking momentum  

@@ -1,7 +1,8 @@
 package foundationmarch.week04modernjava;
 import java.util.function.*;
 
-public class LambdaFunctionalInterface {
+//functional interface and lambda expression
+public class Learning1 {
 
     public static void main(String[] args){
         lambdaExample();
@@ -34,6 +35,7 @@ public class LambdaFunctionalInterface {
 
     static void lambdaExample() {
         //old way annonymous class
+        @SuppressWarnings("Convert2Lambda")
         Learning learner = new Learning() {
             @Override
             public void display(String name) {
@@ -74,11 +76,7 @@ public class LambdaFunctionalInterface {
 
         //Predicate : Boolean test(T t): accept input and return boolean
         Predicate<Integer> predicate = (num) -> {
-            if(num%2 == 0){
-                return true;
-            } else {
-                return false;
-            }
+            return num%2 == 0;
         };
 
         //Test

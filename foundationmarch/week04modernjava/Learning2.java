@@ -3,9 +3,14 @@ package foundationmarch.week04modernjava;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class STREAMAPILEARN {
+//StreamAPI, Optional, Method References, and Custom Functional Interface Examples
+public class Learning2 {
+    
     public static void main(String[] args){
         streamApiLearn();
+        optionalAndMethodRefExamples();
+        Learning2 obj = new Learning2();
+        obj.applyMultifu();
     }
 
     static void streamApiLearn(){
@@ -134,4 +139,70 @@ public class STREAMAPILEARN {
         System.out.println("Partitioned by Even: "+partitionedByEven);
 
     }
+
+    static void optionalAndMethodRefExamples(){
+        System.out.println();
+        System.out.println("--- Optional & Method References Examples ---");
+
+        // Example 1: Safe uppercase from nullable string
+        String maybeName = null; // try with null and with "devdeep"
+        String upper = Optional.ofNullable(maybeName)
+            .map(String::toUpperCase)
+            .orElse("UNKNOWN");
+        System.out.println("Uppercase result: " + upper);
+
+        // Example 2: Parse config value safely
+        Map<String,String> config = Map.of("timeout", " 30 ", "retries", "3");
+        int timeout = Optional.ofNullable(config.get("timeout"))
+            .map(String::trim)
+            .map(Integer::parseInt)
+            .filter(t -> t > 0)
+            .orElse(60);
+        System.out.println("Parsed timeout: " + timeout);
+
+        // Example 3: Replace lambdas with method references
+        List<Integer> nums = Arrays.asList(1,2,3,4,5);
+        int sumWithMethodRef = nums.stream().reduce(0, Integer::sum);
+        System.out.println("Sum using Integer::sum: " + sumWithMethodRef);
+
+        System.out.println("Print with method reference (System.out::println):");
+        nums.stream().map(n -> n * n).forEach(System.out::println);
+
+
+        int[] primitive = nums.stream().mapToInt(Integer::intValue).toArray();
+        System.out.println("Primitive array: " + Arrays.toString(primitive));
+    } 
+
+    
+    @FunctionalInterface
+    interface MultiFunction<A,B,C,D,R>{
+        R apply(A a, B b, C c, D d);
+    }
+    class Student{
+        int id;
+        String name;
+        int score;
+        String grade;
+
+        Student(int id, String name, int score, String grade) {
+            this.id = id;
+            this.name = name;
+            this.score = score;
+            this.grade = grade;
+        }
+        
+        void display(){
+            System.out.printf("ID: %d, Name: %s, Score: %d, Grade: %s\n", id, name, score, grade);
+        }
+    }
+    void applyMultifu() {
+        MultiFunction<Integer,String,Integer,String,Student> createStudent = Student::new;
+        Student s1 = createStudent.apply(12, "LOGAN", 40, "D");
+        s1.display();
+    }
 }
+
+
+
+
+

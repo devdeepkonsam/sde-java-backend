@@ -6,9 +6,9 @@
 3. **Optional<T>**
 4. **Method References**
 5. **Exception Handling**
-6. **Multithreading Basics**
-7. **JDBC & Database Connectivity**
-8. **SQL Fundamentals**
+6. **JDBC & Database Connectivity**
+7. **SQL Fundamentals**
+8. **Multithreading Basics** (deferred)
 
 ---
 
@@ -197,33 +197,7 @@ class InvalidAgeException extends Exception {
 
 ---
 
-## 7. MULTITHREADING
-
-### Creating Threads with Runnable
-```java
-Thread thread = new Thread(() -> {
-    for (int i = 0; i < 5; i++) {
-        System.out.println("Count: " + i);
-        Thread.sleep(1000);
-    }
-});
-thread.start();  // Must call start(), not run()!
-```
-
-### Thread Synchronization
-```java
-class Counter {
-    private int count = 0;
-    
-    public synchronized void increment() {
-        count++;
-    }
-}
-```
-
----
-
-## 8. JDBC & SQL
+## 7. JDBC & SQL
 
 ### Basic JDBC Steps
 ```java
@@ -266,9 +240,9 @@ while (rs.next()) {
 ✅ Optional eliminates null checks  
 ✅ Method references shorten lambda code  
 ✅ Exception handling makes code robust  
-✅ Multithreading enables concurrent tasks  
 ✅ JDBC connects Java to databases  
 ✅ SQL queries retrieve and manipulate data  
+✅ Multithreading can be learned later without breaking momentum  
 
 ---
 

@@ -13,9 +13,9 @@
 3. **Optional<T>** - Eliminate null pointer exceptions
 4. **Method References** - Shorthand for lambdas
 5. **Exception Handling** - Robust error management
-6. **Multithreading Basics** - Concurrent execution
-7. **JDBC** - Connect Java to databases
-8. **SQL Fundamentals** - Query and manipulate data
+6. **JDBC** - Connect Java to databases
+7. **SQL Fundamentals** - Query and manipulate data
+8. **Multithreading Basics** - Deferred for later
 
 ---
 
@@ -111,18 +111,14 @@ week04modernjava/
 
 ---
 
-### Day 6: Multithreading & JDBC
-**Goal**: Execute tasks concurrently; connect to databases
+### Day 6: JDBC
+**Goal**: Connect Java to databases and practice safe queries
 
 **Learn**:
-- Thread creation with Runnable
-- Thread lifecycle: start(), join(), sleep()
-- Synchronized methods & blocks
 - JDBC setup: Connection, Statement, ResultSet
 - PreparedStatement for security
 
 **Practice**:
-- Run `ModernJavaPlayground.multithreadingExamples()`
 - Set up MySQL database and run `JDBCExample.java`
 
 ---
@@ -163,7 +159,6 @@ java ModernJavaPlayground
 - [ ] **Streams**: Can chain filter, map, collect operations
 - [ ] **Optional**: Replace all null checks with Optional
 - [ ] **Exception Handling**: Use try-with-resources properly
-- [ ] **Multithreading**: Understand Thread.start() vs run()
 - [ ] **JDBC**: Successfully connect to MySQL database
 - [ ] **SQL**: Write SELECT, JOIN, GROUP BY, aggregation queries
 - [ ] **Integration**: Combine Streams + Optional in real code
@@ -196,7 +191,6 @@ java ModernJavaPlayground
 | **Streams** | Declarative data processing (vs imperative loops) |
 | **Optional** | Safe null handling without `if (x != null)` checks |
 | **Exceptions** | Use try-with-resources for auto-cleanup |
-| **Threads** | Call `start()` not `run()` to create new thread |
 | **JDBC** | Always use PreparedStatement to prevent SQL injection |
 | **SQL** | Master SELECT, JOINs, and GROUP BY first |
 4. Write a JDBC program to fetch users from a table

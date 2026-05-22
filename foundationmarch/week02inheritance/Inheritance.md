@@ -22,3 +22,10 @@ Class B Child
 4. Multiple Inheritance: A child class inherits from multiple parent classes (not supported in Java, but can be achieved using interfaces).
 5. Hybrid Inheritance: A combination of two or more types of inheritance.
 
+## Code Example
+The following Java files show inheritance, overriding, and upcasting in a simple animal example:
+- Animal.java
+- Dog.java
+- Cat.java
+- InheritanceDemo.java
+

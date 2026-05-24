@@ -88,31 +88,31 @@ SDE-Prep-2026/
 **Focus**: Java Fundamentals, OOP Principles, and Basic DSA
 
 ### Week 1: Encapsulation & Arrays/Hashing
-- [ ] **DSA Topics**: Arrays & Hashing (10 problems)
-  - [ ] Contains Duplicate
-  - [ ] Valid Anagram
-  - [ ] Two Sum
-  - [ ] Group Anagrams
-  - [ ] Top K Frequent Elements
-  - [ ] Product of Array Except Self
-  - [ ] Valid Sudoku
+- [✅] **DSA Topics**: Arrays & Hashing (10 problems)
+  - [✅ ] Contains Duplicate
+  - [✅] Valid Anagram
+  - [✅] Two Sum
+  - [✅] Group Anagrams
+  - [✅] Top K Frequent Elements
+  - [✅] Product of Array Except Self
+  - [✅] Valid Sudoku
   - [ ] Encode and Decode Strings
-  - [ ] Longest Consecutive Sequence
-  - [ ] 3Sum
-- [ ] **Java Task**: Create `User` class with private fields (name, email, password)
-- [ ] **Theory**: JVM Architecture (Stack, Heap, Method Area)
-- [ ] **Tools**: Install JDK 21, IntelliJ IDEA, Git basics
+  - [✅] Longest Consecutive Sequence
+  - [✅] 3Sum
+- [✅] **Java Task**: Create `User` class with private fields (name, email, password)
+- [✅] **Theory**: JVM Architecture (Stack, Heap, Method Area)
+- [✅] **Tools**: Install JDK 21, IntelliJ IDEA, Git basics
 
 ### Week 2: Inheritance & Two Pointers
 - [ ] **DSA Topics**: Two Pointers (5 problems)
-  - [ ] Valid Palindrome
+  - [✅] Valid Palindrome
   - [ ] Two Sum II (Sorted Array)
   - [ ] 3Sum
   - [ ] Container with Most Water
   - [ ] Trapping Rain Water
-- [ ] **Java Task**: Vehicle hierarchy (Car, Bike extending Vehicle)
-- [ ] **Theory**: Method Overriding vs Overloading
-- [ ] **Tools**: Linux CLI basics (cd, ls, mkdir, mv, chmod)
+- [✅] **Java Task**: Vehicle hierarchy (Car, Bike extending Vehicle)
+- [✅] **Theory**: Method Overriding vs Overloading
+- [✅] **Tools**: Linux CLI basics (cd, ls, mkdir, mv, chmod)
 
 ### Week 3: Abstraction & Sliding Window
 - [ ] **DSA Topics**: Sliding Window (6 problems)
@@ -122,8 +122,8 @@ SDE-Prep-2026/
   - [ ] Permutation in String
   - [ ] Minimum Window Substring
   - [ ] Sliding Window Maximum
-- [ ] **Java Task**: Payment interface with `processPayment()` (UPI, CreditCard implementations)
-- [ ] **Theory**: Interface vs Abstract Class, when to use which
+- [✅] **Java Task**: Payment interface with `processPayment()` (UPI, CreditCard implementations)
+- [✅] **Theory**: Interface vs Abstract Class, when to use which
 
 ### Week 4: Modern Java & SQL Basics
 - [ ] **DSA Topics**: Stack (7 problems)
@@ -134,8 +134,8 @@ SDE-Prep-2026/
   - [ ] Daily Temperatures
   - [ ] Car Fleet
   - [ ] Largest Rectangle in Histogram
-- [ ] **Java Task**: Use Lambdas & Streams to filter/sort a List<User>
-- [ ] **Theory**: Optional<T>, Method References, Stream API
+- [✅] **Java Task**: Use Lambdas & Streams to filter/sort a List<User>
+- [✅] **Theory**: Optional<T>, Method References, Stream API
 - [ ] **SQL**: Basic CRUD queries (SELECT, INSERT, UPDATE, DELETE)
 
 ---
@@ -398,7 +398,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 ## 📞 Connect
 
-- **GitHub**: [Your GitHub Profile]
+- **GitHub**: https://github.com/devdeepkonsam
 - **LinkedIn**: [Your LinkedIn]
 - **Portfolio**: [Your Website]
 

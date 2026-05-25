@@ -1,16 +1,20 @@
 package foundationmarch.week04modernjava;
 
 //for ExceptionHandlling
-//checked: compiler tells you to handle it before compilation succeeds, usually with try-catch or throws
-//unchecked: code compiles, but it can fail at runtime and "boom" you get an error
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 //both can happen while running the code; the difference is that checked exceptions must be handled first
 
 public class Learning3 {
     public static void main(String[] args) throws AgeException {
         //if a method throws a checked exception, you must either handle it with try-catch or declare that your method also throws it
         method();
-        method2(17);
-        method3();
+        method2();
+        method3(17); //this will throw an exception beccause age is 17
+        //after that no code will be executed because the exception is not handle
+        //it just declares that it throws the exception
     }
 
     
@@ -29,8 +33,20 @@ public class Learning3 {
             System.out.println("This will always get executed");
         }
     }
+    
+    private static void method2(){
+        //trywithresource is a try block that automatically closes the resource after the block is executed
+        try (BufferedReader br = new BufferedReader(new FileReader("example.txt"))){
+            String line;
+            while((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (Exception e) {
+            System.out.println("Exception :" + e.getMessage());
+        }
+    }
 
-    private static void method2(int age) throws AgeException { 
+    private static void method3(int age) throws AgeException { 
         //for runtime exception we dont need to delare throws
         //throws is used to declare that this method may throw an exceptiion,
         // the coder who calls this method must handdle the exception, either with try-catch or by declaring throws in their method signature
@@ -45,8 +61,6 @@ public class Learning3 {
     }
 
 
-    private static void method3(){
-    }
 }
 
 //custom exception
@@ -61,3 +75,4 @@ class AgeException extends Exception {
         super(message,cause);
     }
 }
+

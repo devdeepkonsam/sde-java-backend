@@ -1,7 +1,0 @@
-CREATE TABLE students (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    age INT NOT NULL,
-    class VARCHAR(5) NOT NULL,
-    address VARCHAR(255) NOT NULL
-)

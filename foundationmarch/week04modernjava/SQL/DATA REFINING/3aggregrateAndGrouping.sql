@@ -1,7 +1,8 @@
 SELECT COUNT(*) AS total_student FROM students;
 
 SELECT class, COUNT(*) AS total_students FROM students
-GROUP BY class; 
+GROUP BY class
+HAVING COUNT(*) = 9; 
 
 SELECT class, AVG(age) AS average_age FROM students
 GROUP BY class; 

@@ -5,7 +5,6 @@ import java.sql.*;
 /**
  * JDBC (Java Database Connectivity) Example
  * Connect to MySQL database and perform CRUD operations
- * 
  * Prerequisites:
  * 1. MySQL server running
  * 2. Add mysql-connector-java dependency (e.g., mysql:mysql-connector-java:8.0.33)

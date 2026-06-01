@@ -1,0 +1,6 @@
+# Example config.properties for JDBCExample
+# Copy to 'config.properties' and update values (DO NOT commit real passwords)
+
+jdbc.url=jdbc:mysql://127.0.0.1:3306/dev
+jdbc.user=root
+jdbc.password=admin

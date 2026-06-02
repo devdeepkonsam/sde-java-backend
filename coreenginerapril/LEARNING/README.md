@@ -48,3 +48,29 @@ The `backend-project/` folder is your single, evolving codebase. By the end of A
 - [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 - [Baeldung Spring Tutorials](https://www.baeldung.com/spring-boot)
 - [REST API Best Practices](https://restfulapi.net/)
+
+---
+
+## Getting started (Maven)
+
+This workspace uses a Maven-based Spring Boot scaffold located in `backend-project/`. Maven is beginner-friendly and aligns with many Java tutorials and IDE integrations.
+
+Quick start:
+
+```bash
+# from repository root
+cd coreenginerapril/backend-project
+mvn spring-boot:run
+```
+
+Build jar:
+
+```bash
+mvn package
+java -jar target/backend-project-0.0.1-SNAPSHOT.jar
+```
+
+Configuration:
+- Copy `src/main/resources/application.properties.example` → `src/main/resources/application.properties` and edit DB credentials. Do not commit secrets.
+- Weekly learning notes and exercises live under the week folders (`week05-ioc-di`, `week06-building-rest`, `week07-database-persistence`, `week08-entity-relationships`).
+

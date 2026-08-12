@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+<body>
+    <h1 id="dt">HELLO ASSAM DOWN TOWN UNIVERSTIY</h1>
+    <h2>Main hoon gian</h2>
+    <p>one</p>
+    <p>two</p>
+    <p>three</p>
+    <p>four</p>
+
+
+
+    <button>click me</button>
+
+    <script>
+        //id
+        let dt = document.getElementById("dt");
+        //console.log(dt);
+        
+
+
+        //query selector
+        // let dt = document.querySelector('h2');
+        // console.log(dt);
+
+        // let p = document.querySelectorAll('p');
+        // console.log(p);
+
+
+        dt.innerHTML = "<h1>welcome to ghy</h1>";
+
+        //add a list
+        let ul = document.createElement('ul');
+        let li1 = document.createElement('li');
+        li1.innerHTML = "one";
+        let li2 = document.createElement('li');
+        li2.innerHTML = "two";
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        document.body.appendChild(ul);
+    
+        let btn = document.querySelector('button');
+        btn.addEventListener("click", ()=>{
+            let p = document.createElement('p');
+            p.textContent = "Apne button click kiya hai ";
+            document.body.appendChild(p);
+        })
+
+    </script>
+</body>
+</html>

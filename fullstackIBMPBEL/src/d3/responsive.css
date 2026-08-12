@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-wrap: row;
+}
+
+.flex_items{
+    background-color: bisque;
+    padding : 10px;
+    text-align : center;
+    font-size : 20px;
+    flex : 30%;
+}
+
+@media (max-width:600px){
+    .flex-items{
+        flex: 100%;
+    }
+}

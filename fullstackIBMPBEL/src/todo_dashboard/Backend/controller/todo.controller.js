@@ -49,6 +49,9 @@ const updateTodo = async(req,res)=>{
 
 const removeTodo = async(req,res) =>{
     try {
+        if(!req.params.id){
+            return res.status(404).json({message: "Todo id is required"});
+        }
         const todo = await Todo.findOneAndDelete({_id: req.params.id, user:req.user.id})
         if(!todo){
             return res.status(404).json({message: "Todo not found"});

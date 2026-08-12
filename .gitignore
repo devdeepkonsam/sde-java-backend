@@ -23,7 +23,7 @@
 hs_err_pid*
 replay_pid*
 
-# Local JDBC config (do not commit secrets)
+# Local JDBC config
 foundationmarch/week04modernjava/config.properties
 .env
 .env.*
